@@ -3,7 +3,7 @@ type TMods = Record<string, boolean | string>;
 export function classNames(
   cls: string,
   additional: string[],
-  mods?: TMods
+  mods: TMods = {}
 ): string {
   return [
     cls,

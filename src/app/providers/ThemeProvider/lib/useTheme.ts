@@ -6,7 +6,7 @@ interface IUseThemeResult {
   theme: Theme;
 }
 
-export function useTheme(): IUseThemeResult {
+function useTheme(): IUseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = () => {
@@ -19,3 +19,5 @@ export function useTheme(): IUseThemeResult {
 
   return { theme, toggleTheme };
 }
+
+export default useTheme;
