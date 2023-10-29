@@ -16,6 +16,7 @@ export function buildWebpackConfig(
     entry: paths.entry,
     output: {
       filename: "[name].[contenthash:8].js",
+      assetModuleFilename: "./assets/[contenthash:6]-[name][ext]",
       path: paths.output,
       clean: true,
     },
