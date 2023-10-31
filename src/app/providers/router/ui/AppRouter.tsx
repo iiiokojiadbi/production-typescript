@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { Suspense } from "react";
 
-import { routeConfig } from "shared/config/routerConfig/routerConfig";
+import { routeConfig } from "shared/config/routerConfig";
 
 function AppRouter() {
   return (

@@ -1,6 +1,6 @@
 type TMods = Record<string, boolean | string>;
 
-export function classNames(
+function classNames(
   cls: string,
   additional: string[] = [],
   mods: TMods = {}
@@ -13,3 +13,5 @@ export function classNames(
       .map(([cls]) => cls),
   ].join(" ");
 }
+
+export { classNames };
