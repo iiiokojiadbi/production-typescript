@@ -8,10 +8,11 @@ declare module "*.scss" {
   export default content;
 }
 
-declare module "*.png";
-declare module "*.jpg";
-declare module "*.jpeg";
-declare module "*.gif";
+declare module "*.png?url";
+declare module "*.jpg?url";
+declare module "*.jpeg?url";
+declare module "*.gif?url";
+declare module "*.svg?url";
 declare module "*.svg" {
   import React = require("react");
   const SVG: React.FC<React.SVGProps<SVGSVGElement>>;

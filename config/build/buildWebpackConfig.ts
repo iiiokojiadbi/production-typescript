@@ -14,9 +14,10 @@ export function buildWebpackConfig(
   return {
     mode,
     entry: paths.entry,
+    cache: false,
     output: {
       filename: "[name].[contenthash:8].js",
-      assetModuleFilename: "./assets/[contenthash:6]-[name][ext]",
+      assetModuleFilename: "assets/[contenthash:6]-[name][ext]",
       path: paths.output,
       clean: true,
     },

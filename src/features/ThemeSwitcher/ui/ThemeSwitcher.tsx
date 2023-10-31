@@ -1,6 +1,8 @@
-import { useTheme } from "app/providers/ThemeProvider";
+import { Theme, useTheme } from "app/providers/ThemeProvider";
 import cls from "./ThemeSwitcher.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
+
+import { Button, ButtonTheme } from "shared/ui/Button";
 
 import SunIcon from "shared/assets/icons/sun-filled.svg";
 import MoonIcon from "shared/assets/icons/moon-filled.svg";
@@ -15,16 +17,14 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
   const { theme, toggleTheme } = useTheme();
   const { className } = props;
 
-  console.log(SunIcon);
-  console.log(MoonIcon);
-
   return (
-    <button
+    <Button
+      theme={ButtonTheme.CLEAR}
       className={classNames(cls.ThemeSwitcher, [className])}
       onClick={toggleTheme}
     >
-      <SunIcon />
-    </button>
+      {theme === Theme.DARK ? <MoonIcon /> : <SunIcon color="white" />}
+    </Button>
   );
 };
 
