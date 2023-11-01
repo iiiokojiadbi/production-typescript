@@ -2,5 +2,13 @@
   "i18n-ally.localesPaths": [
     "public/locales",
     "src/shared/config/i18n"
+  ],
+  "cSpell.language": "en,ru",
+  "cSpell.words": [
+    "pmmmwh",
+    "esbenp",
+    "languagedetector",
+    "svgr",
+    "svrg"
   ]
 }

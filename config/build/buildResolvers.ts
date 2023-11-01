@@ -2,11 +2,20 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 
 export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
+  const { paths } = options;
+
   return {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".scss", ".css"],
     preferAbsolute: true,
-    modules: [options.paths.src, "node_modules"],
+    modules: [paths.src, "node_modules"],
     mainFiles: ["index"],
-    alias: {},
+    alias: {
+      "@app": paths.src + "/app",
+      "@pages": paths.src + "/pages",
+      "@entities": paths.src + "/entities",
+      "@features": paths.src + "/features",
+      "@shared": paths.src + "/shared",
+      "@widgets": paths.src + "/widgets",
+    },
   };
 }

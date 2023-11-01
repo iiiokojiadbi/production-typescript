@@ -25,10 +25,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     resourceQuery: /url/, // *.svg?url
   };
 
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: "ts-loader",
+  const babelLoader = {
+    test: /\.(js|jsx|ts|tsx)$/,
     exclude: /node_modules/,
+    use: [
+      {
+        loader: "babel-loader",
+        options: {
+          plugins: isDev ? ["react-refresh/babel"] : [],
+        },
+      },
+    ],
   };
 
   const cssLoaders = {
@@ -48,5 +55,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  return [fileLoader, svgLoader, cssLoaders, typescriptLoader];
+  return [fileLoader, svgLoader, cssLoaders, babelLoader];
 }
