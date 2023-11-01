@@ -37,18 +37,19 @@
   },
   "include": [
     "src",
-    "declaration.d.ts"
+    "declaration.d.ts",
+    "webpack.config.ts",
+    ".eslintrc.js"
   ] /* Include modules in the program. */,
   "exclude": [
     "node_modules",
-    "build"
+    "build",
   ] /* Exclude modules from the program. */,
   "plugins": [
     {
       "name": "typescript-plugin-css-modules"
     }
-  ] // to use css modules
-  ,
+  ], // to use css modules
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

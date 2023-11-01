@@ -1,13 +1,13 @@
-import cls from "./LangSwitcher.module.scss";
-import { classNames } from "@shared/lib/classNames";
+import cls from './LangSwitcher.module.scss';
+import { classNames } from '@shared/lib/classNames';
 
-import { Button, ButtonTheme } from "@shared/ui/Button";
+import { Button, ButtonTheme } from '@shared/ui/Button';
 
-import { FC } from "react";
-import { useTranslation } from "react-i18next";
+import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface LangSwitcherProps {
-  className?: string;
+  className?: string
 }
 
 const LangSwitcher: FC<LangSwitcherProps> = (props) => {
@@ -15,8 +15,8 @@ const LangSwitcher: FC<LangSwitcherProps> = (props) => {
 
   const { t, i18n } = useTranslation();
 
-  const onToggle = () => {
-    i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+  const onToggle = (): void => {
+    void i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
 
   return (
@@ -25,7 +25,7 @@ const LangSwitcher: FC<LangSwitcherProps> = (props) => {
       className={classNames(cls.LangSwitcher, [className])}
       onClick={onToggle}
     >
-      {t("Language")}
+      {t('Language')}
     </Button>
   );
 };
