@@ -7,10 +7,12 @@
   "cSpell.words": [
     "esbenp",
     "languagedetector",
+    "lcov",
     "pmmmwh",
     "stylelint",
     "svgr",
-    "svrg"
+    "svrg",
+    "unmocked"
   ],
   "stylelint.enable": true,
   "css.validate": true,
