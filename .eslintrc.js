@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['standard-with-typescript', 'plugin:react/recommended'],
+  extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:i18next/recommended'],
   overrides: [
     {
       env: {
@@ -26,7 +26,7 @@ module.exports = {
       version: 'detect'
     }
   },
-  plugins: ['react'],
+  plugins: ['react', 'i18next'],
   rules: {
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',

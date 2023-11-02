@@ -5,10 +5,18 @@
   ],
   "cSpell.language": "en,ru",
   "cSpell.words": [
-    "pmmmwh",
     "esbenp",
     "languagedetector",
+    "pmmmwh",
+    "stylelint",
     "svgr",
     "svrg"
-  ]
+  ],
+  "stylelint.enable": true,
+  "css.validate": true,
+  "scss.validate": true,
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
 }
