@@ -1,16 +1,16 @@
-import { classNames } from '@shared/lib/classNames';
-import cls from './Navbar.module.scss';
-import { AppLink, AppLinkTheme } from '@shared/ui/AppLink';
-import { RoutePath } from '@shared/config/routerConfig';
-import { useTranslation } from 'react-i18next';
-import type { FC } from 'react';
+import {classNames} from "@shared/lib/classNames";
+import cls from "./Navbar.module.scss";
+import {AppLink, AppLinkTheme} from "@shared/ui/AppLink";
+import {RoutePath} from "@shared/config/routerConfig";
+import {useTranslation} from "react-i18next";
+import type {FC} from "react";
 
 interface NavbarProps {
-  className?: string
+  className?: string;
 }
 
-const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
-  const { t } = useTranslation();
+const Navbar: FC<NavbarProps> = ({className}: NavbarProps) => {
+  const {t} = useTranslation();
 
   return (
     <div className={classNames(cls.Navbar, [className])}>
@@ -18,16 +18,14 @@ const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
         <AppLink
           theme={AppLinkTheme.SECONDARY}
           className={cls.mainLink}
-          to={RoutePath.main}
-        >
-          {t('Main')}
+          to={RoutePath.main}>
+          {t("Main")}
         </AppLink>
         <AppLink
           theme={AppLinkTheme.SECONDARY}
           className={cls.mainLink}
-          to={RoutePath.about}
-        >
-          {t('AboutUs')}
+          to={RoutePath.about}>
+          {t("AboutUs")}
         </AppLink>
       </div>
     </div>

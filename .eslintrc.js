@@ -2,44 +2,38 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true
+    jest: true,
   },
-  extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:i18next/recommended'],
+  extends: [
+    "standard-with-typescript",
+    "plugin:react/recommended",
+    "plugin:i18next/recommended",
+    "plugin:prettier/recommended",
+  ],
   overrides: [
     {
       env: {
-        node: true
+        node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: 'script'
-      }
-    }
+        sourceType: "script",
+      },
+    },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: "./tsconfig.json",
+    tsconfigRootDir: __dirname,
   },
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: "detect",
+    },
   },
-  plugins: ['react', 'i18next'],
+  plugins: ["react", "i18next", "prettier"],
   rules: {
-    'arrow-body-style': 'off',
-    'prefer-arrow-callback': 'off',
-    'react/react-in-jsx-scope': 'off',
-    '@typescript-eslint/space-before-function-paren': 'off',
-    semi: [2, 'always'],
-    '@typescript-eslint/semi': 'off',
-    '@typescript-eslint/consistent-type-imports': [
-      'error',
-      {
-        prefer: 'type-imports'
-      }
-    ]
-  }
+    "react/react-in-jsx-scope": "off",
+  },
 };

@@ -1,21 +1,21 @@
-import type webpack from 'webpack';
-import type { BuildOptions } from './types/config';
+import type webpack from "webpack";
+import type {BuildOptions} from "./types/config";
 
 export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
-  const { paths } = options;
+  const {paths} = options;
 
   return {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.css'],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".scss", ".css"],
     preferAbsolute: true,
-    modules: [paths.src, 'node_modules'],
-    mainFiles: ['index'],
+    modules: [paths.src, "node_modules"],
+    mainFiles: ["index"],
     alias: {
-      '@app': paths.src + '/app',
-      '@pages': paths.src + '/pages',
-      '@entities': paths.src + '/entities',
-      '@features': paths.src + '/features',
-      '@shared': paths.src + '/shared',
-      '@widgets': paths.src + '/widgets'
-    }
+      "@app": paths.src + "/app",
+      "@pages": paths.src + "/pages",
+      "@entities": paths.src + "/entities",
+      "@features": paths.src + "/features",
+      "@shared": paths.src + "/shared",
+      "@widgets": paths.src + "/widgets",
+    },
   };
 }

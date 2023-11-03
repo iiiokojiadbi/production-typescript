@@ -1,17 +1,17 @@
-type TMods = Record<string, boolean | string | undefined>
+type TMods = Record<string, boolean | string | undefined>;
 
 const classNames = (
   cls: string,
   additional?: Array<string | undefined>,
-  mods?: TMods
+  mods?: TMods,
 ): string => {
   return [
     cls,
-    ...additional ?? [],
+    ...(additional ?? []),
     ...Object.entries(mods ?? {})
       .filter(([_, value]) => Boolean(value))
-      .map(([cls]) => cls)
-  ].join(' ');
+      .map(([cls]) => cls),
+  ].join(" ");
 };
 
-export { classNames };
+export {classNames};

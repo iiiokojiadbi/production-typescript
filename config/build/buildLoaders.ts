@@ -1,28 +1,28 @@
-import type webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import type { BuildOptions } from './types/config';
+import type webpack from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import type {BuildOptions} from "./types/config";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-  const { isDev } = options;
+  const {isDev} = options;
 
   const svgLoader = {
     test: /\.svg$/i,
     oneOf: [
       {
-        type: 'asset/resource',
-        resourceQuery: /url/ // *.svg?url
+        type: "asset/resource",
+        resourceQuery: /url/, // *.svg?url
       },
       {
         issuer: /\.tsx?$/,
-        use: ['@svgr/webpack']
-      }
-    ]
+        use: ["@svgr/webpack"],
+      },
+    ],
   };
 
   const fileLoader = {
     test: /\.(png|jpg|jpeg|gif|woff|woff2)$/i,
-    type: 'asset/resource',
-    resourceQuery: /url/ // *.svg?url
+    type: "asset/resource",
+    resourceQuery: /url/, // *.svg?url
   };
 
   const babelLoader = {
@@ -30,29 +30,29 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
     use: [
       {
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
-          plugins: isDev ? ['react-refresh/babel'] : []
-        }
-      }
-    ]
+          plugins: isDev ? ["react-refresh/babel"] : [],
+        },
+      },
+    ],
   };
 
   const cssLoaders = {
     test: /\.s[ac]ss$/i,
     use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
       {
-        loader: 'css-loader',
+        loader: "css-loader",
         options: {
           modules: {
-            auto: (pathname: string) => pathname.includes('.module.'),
-            localIdentName: '[local]--[hash:base64:4]'
-          }
-        }
+            auto: (pathname: string) => pathname.includes(".module."),
+            localIdentName: "[local]--[hash:base64:4]",
+          },
+        },
       },
-      'sass-loader'
-    ]
+      "sass-loader",
+    ],
   };
 
   return [fileLoader, svgLoader, cssLoaders, babelLoader];

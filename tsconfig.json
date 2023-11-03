@@ -12,9 +12,7 @@
     "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
     "baseUrl": "./src" /* Specify the base directory to resolve non-relative module names. */,
     "paths": {
-      "@*": [
-        "*"
-      ]
+      "@*": ["*"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     "types": [
       "node",
@@ -43,10 +41,7 @@
     "webpack.config.ts",
     ".eslintrc.js"
   ] /* Include modules in the program. */,
-  "exclude": [
-    "node_modules",
-    "build",
-  ] /* Exclude modules from the program. */,
+  "exclude": ["node_modules", "build"] /* Exclude modules from the program. */,
   "plugins": [
     {
       "name": "typescript-plugin-css-modules"
