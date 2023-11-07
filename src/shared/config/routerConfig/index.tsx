@@ -30,4 +30,4 @@ const routeConfig: Record<AppRoutes, RouteProps> = {
   },
 };
 
-export {AppRoutes, RoutePath, routeConfig};
+export {AppRoutes, routeConfig, RoutePath};

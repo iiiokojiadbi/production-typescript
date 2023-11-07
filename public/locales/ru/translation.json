@@ -1,5 +1,9 @@
 {
   "Main": "Главная",
   "AboutUs": "О сайте",
-  "Language": "Русский"
+  "Language": "Русский",
+  "NotFoundPage": "Страница не найдена",
+  "UnexpectedError": "Произошла непредвиденная ошибка",
+  "RefreshPage": "Обновить страницу",
+  "ShowError": "Показать ошибку"
 }

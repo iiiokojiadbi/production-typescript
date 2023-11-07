@@ -1,9 +1,10 @@
+import {LangSwitcher} from "@features/LangSwitcher";
+import {ThemeSwitcher} from "@features/ThemeSwitcher";
 import {classNames} from "@shared/lib/classNames";
-import cls from "./Sidebar.module.scss";
 import type {FC} from "react";
 import {useState} from "react";
-import {ThemeSwitcher} from "@features/ThemeSwitcher";
-import {LangSwitcher} from "@features/LangSwitcher";
+
+import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
   className?: string;

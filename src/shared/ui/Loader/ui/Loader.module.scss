@@ -8,11 +8,14 @@
 .Loader div {
   position: absolute;
   top: 33px;
+
   width: 13px;
   height: 13px;
-  border-radius: 50%;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
   background: var(--inverted-bg-color);
+  border-radius: 50%;
+
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
 .Loader div:nth-child(1) {

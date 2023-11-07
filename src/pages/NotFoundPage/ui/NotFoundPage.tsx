@@ -1,7 +1,8 @@
-import type {FC} from "react";
-import cls from "./NotFoundPage.module.scss";
-import {useTranslation} from "react-i18next";
 import {classNames} from "@shared/lib/classNames";
+import type {FC} from "react";
+import {useTranslation} from "react-i18next";
+
+import cls from "./NotFoundPage.module.scss";
 
 interface NotFoundPageProps {
   className?: string;
@@ -9,7 +10,7 @@ interface NotFoundPageProps {
 
 const NotFoundPage: FC<NotFoundPageProps> = props => {
   const {className} = props;
-  const {t} = useTranslation("not-found");
+  const {t} = useTranslation();
 
   return (
     <div className={classNames(cls.NotFoundPage, [className])}>

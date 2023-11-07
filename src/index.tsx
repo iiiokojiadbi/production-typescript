@@ -1,17 +1,20 @@
 // eslint-disable-next-line react/no-deprecated
-import {render} from "react-dom";
-import {BrowserRouter} from "react-router-dom";
+import "@shared/config/i18n";
 
 import {App} from "@app/App";
 import {ThemeProvider} from "@app/providers/ThemeProvider";
-
-import "@shared/config/i18n";
+import {PageError} from "@widgets/PageError";
+import {render} from "react-dom";
+import {ErrorBoundary} from "react-error-boundary";
+import {BrowserRouter} from "react-router-dom";
 
 render(
   <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <ErrorBoundary fallback={<PageError />}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </ErrorBoundary>
   </BrowserRouter>,
   document.getElementById("root"),
 );

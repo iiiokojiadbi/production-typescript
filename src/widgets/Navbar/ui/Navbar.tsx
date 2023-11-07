@@ -1,9 +1,10 @@
-import {classNames} from "@shared/lib/classNames";
-import cls from "./Navbar.module.scss";
-import {AppLink, AppLinkTheme} from "@shared/ui/AppLink";
 import {RoutePath} from "@shared/config/routerConfig";
-import {useTranslation} from "react-i18next";
+import {classNames} from "@shared/lib/classNames";
+import {AppLink, AppLinkTheme} from "@shared/ui/AppLink";
 import type {FC} from "react";
+import {useTranslation} from "react-i18next";
+
+import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
   className?: string;

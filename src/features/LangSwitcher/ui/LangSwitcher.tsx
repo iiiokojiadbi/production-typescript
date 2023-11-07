@@ -1,7 +1,5 @@
 import {classNames} from "@shared/lib/classNames";
-
 import {Button, ButtonTheme} from "@shared/ui/Button";
-
 import type {FC} from "react";
 import {useTranslation} from "react-i18next";
 

@@ -2,10 +2,10 @@
   "ignoreFiles": ["build/**/*"],
   "extends": [
     "stylelint-config-standard-scss",
-    "stylelint-config-idiomatic-order",
-    "stylelint-prettier/recommended"
+    "stylelint-prettier/recommended",
+    "stylelint-config-clean-order"
   ],
-  "plugins": ["stylelint-order", "stylelint-scss"],
+  "plugins": ["stylelint-scss"],
   "rules": {
     "selector-class-pattern": null
   }

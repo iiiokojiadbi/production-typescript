@@ -1,11 +1,8 @@
 import {Theme, useTheme} from "@app/providers/ThemeProvider";
-import {classNames} from "@shared/lib/classNames";
-
-import {Button, ButtonTheme} from "@shared/ui/Button";
-
-import SunIcon from "@shared/assets/icons/sun-filled.svg";
 import MoonIcon from "@shared/assets/icons/moon-filled.svg";
-
+import SunIcon from "@shared/assets/icons/sun-filled.svg";
+import {classNames} from "@shared/lib/classNames";
+import {Button, ButtonTheme} from "@shared/ui/Button";
 import type {FC} from "react";
 
 interface ThemeSwitcherProps {

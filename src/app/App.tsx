@@ -1,9 +1,8 @@
 import "@app/styles/index.scss";
 
-import {useTheme} from "@app/providers/ThemeProvider";
-
-import {classNames} from "@shared/lib/classNames";
 import {AppRouter} from "@app/providers/router";
+import {useTheme} from "@app/providers/ThemeProvider";
+import {classNames} from "@shared/lib/classNames";
 import {Navbar} from "@widgets/Navbar";
 import {Sidebar} from "@widgets/Sidebar";
 import type {FC} from "react";

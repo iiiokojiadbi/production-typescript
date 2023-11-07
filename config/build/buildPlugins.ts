@@ -1,8 +1,9 @@
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import type {BuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import HTMLWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack from "webpack";
+
+import type {BuildOptions} from "./types/config";
 
 export function buildPlugins(
   options: BuildOptions,
@@ -25,6 +26,6 @@ export function buildPlugins(
       _IS_DEV_: JSON.stringify(isDev),
     }),
 
-    ...(isDev ? [new ReactRefreshWebpackPlugin()] : []),
+    ...(isDev ? [new ReactRefreshWebpackPlugin({overlay: false})] : []),
   ];
 }

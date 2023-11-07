@@ -1,5 +1,9 @@
 {
   "Main": "Main",
   "AboutUs": "About us",
-  "Language": "English"
+  "Language": "English",
+  "NotFoundPage": "Page not found",
+  "UnexpectedError": "An unexpected error has occurred",
+  "RefreshPage": "Refresh page",
+  "ShowError": "Show error"
 }

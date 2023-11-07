@@ -1,6 +1,7 @@
-import type {FC} from "react";
-import cls from "./Loader.module.scss";
 import {classNames} from "@shared/lib/classNames";
+import type {FC} from "react";
+
+import cls from "./Loader.module.scss";
 
 interface LoaderProps {
   className?: string;
