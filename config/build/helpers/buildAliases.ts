@@ -1,6 +1,6 @@
-import {BuildPaths} from "../types/config";
+import {type BuildPaths} from "../types/config";
 
-export const buildAliases = (paths: BuildPaths) => ({
+export const buildAliases = (paths: BuildPaths): Record<string, string> => ({
   "@app": paths.src + "/app",
   "@pages": paths.src + "/pages",
   "@entities": paths.src + "/entities",

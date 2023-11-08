@@ -1,7 +1,7 @@
 import type webpack from "webpack";
 
-import type {BuildOptions} from "./types/config";
 import {buildAliases} from "./helpers/buildAliases";
+import type {BuildOptions} from "./types/config";
 
 export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
   const {paths} = options;

@@ -1,10 +1,11 @@
 import type {StorybookConfig} from "@storybook/react-webpack5";
-import {BuildPaths} from "../build/types/config";
 import path from "path";
-import {RuleSetRule} from "webpack";
-import {buildCssLoader} from "../build/helpers/buildCssLoader";
+import {type RuleSetRule} from "webpack";
+
 import {buildAliases} from "../build/helpers/buildAliases";
+import {buildCssLoader} from "../build/helpers/buildCssLoader";
 import {buildSvgLoader} from "../build/helpers/buildSvgLoader";
+import {type BuildPaths} from "../build/types/config";
 
 const config: StorybookConfig = {
   stories: ["../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -38,7 +39,7 @@ const config: StorybookConfig = {
     config.module!.rules = config.module!.rules!.map(rule => {
       const typedRules = rule as RuleSetRule;
 
-      if (/svg/.test(typedRules.test as string)) {
+      if ((typedRules.test as string).includes("svg")) {
         return {...typedRules, exclude: /\.svg$/};
       }
 

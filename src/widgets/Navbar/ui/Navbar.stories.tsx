@@ -1,9 +1,9 @@
+import {Theme} from "@app/providers/ThemeProvider";
+import RouteDecorator from "@shared/config/storybook/RouteDecorator";
+import ThemeDecorator from "@shared/config/storybook/ThemeDecorator";
 import type {Meta, StoryObj} from "@storybook/react";
 
 import Navbar from "./Navbar";
-import ThemeDecorator from "@shared/config/storybook/ThemeDecorator";
-import {Theme} from "@app/providers/ThemeProvider";
-import RouteDecorator from "@shared/config/storybook/RouteDecorator";
 
 const meta = {
   title: "@widgets/Navbar",

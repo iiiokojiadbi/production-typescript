@@ -1,8 +1,8 @@
 import type webpack from "webpack";
 
-import type {BuildOptions} from "./types/config";
 import {buildCssLoader} from "./helpers/buildCssLoader";
 import {buildSvgLoader} from "./helpers/buildSvgLoader";
+import type {BuildOptions} from "./types/config";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const {isDev} = options;
