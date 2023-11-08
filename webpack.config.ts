@@ -4,10 +4,7 @@ import type webpack from "webpack";
 import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
 import type {BuildConfigOptions, BuildPaths} from "./config/build/types/config";
 
-const WebpackConfig: BuildConfigOptions<webpack.Configuration> = (
-  env,
-  options,
-) => {
+const WebpackConfig: BuildConfigOptions<webpack.Configuration> = (env, options) => {
   const paths: BuildPaths = {
     entry: path.resolve(__dirname, "src", "index.tsx"),
     output: path.resolve(__dirname, "build"),

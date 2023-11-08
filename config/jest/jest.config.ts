@@ -4,6 +4,7 @@
  */
 
 import type {Config} from "jest";
+import path from "path";
 
 const config: Config = {
   rootDir: "../../",
@@ -13,6 +14,18 @@ const config: Config = {
   coveragePathIgnorePatterns: ["/node_modules/"],
   moduleDirectories: ["node_modules"],
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
+  modulePaths: ["<rootDir>"],
+  setupFilesAfterEnv: ["<rootDir>/config/jest/setupTest.ts"],
+  moduleNameMapper: {
+    "\\.svg$": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+    "\\.(s?css)$": "identity-obj-proxy",
+    "@app/(.*)$": "<rootDir>/src/app/$1",
+    "@pages/(.*)$": "<rootDir>/src/pages/$1",
+    "@entities/(.*)$": "<rootDir>/src/entities/$1",
+    "@features/(.*)$": "<rootDir>/src/features/$1",
+    "@shared/(.*)$": "<rootDir>/src/shared/$1",
+    "@widgets/(.*)$": "<rootDir>/src/widgets/$1",
+  },
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,

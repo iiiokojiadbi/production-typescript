@@ -7,7 +7,7 @@ const classNames = (
 ): string => {
   return [
     cls,
-    ...(additional ?? []),
+    ...(additional != null ? additional.filter(Boolean) : []),
     ...Object.entries(mods ?? {})
       .filter(([_, value]) => Boolean(value))
       .map(([cls]) => cls),

@@ -1,6 +1,7 @@
 {
   "cSpell.language": "en,ru",
   "cSpell.words": [
+    "dbaeumer",
     "esbenp",
     "languagedetector",
     "lcov",
@@ -8,8 +9,8 @@
     "stylelint",
     "svgr",
     "svrg",
-    "unmocked",
-    "dbaeumer"
+    "testid",
+    "unmocked"
   ],
   "scss.validate": false,
   "css.validate": false,
