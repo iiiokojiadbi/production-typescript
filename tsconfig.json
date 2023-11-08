@@ -32,12 +32,14 @@
     "noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied 'any' type. */,
     "strictNullChecks": true /* When type checking, take into account 'null' and 'undefined'. */,
     "noFallthroughCasesInSwitch": true /* Enable error reporting for fallthrough cases in switch statements. */,
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "strictBindCallApply": true
   },
   "include": [
-    "src",
-    "config",
-    "declaration.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./config/**/*.ts",
+    "./config/**/*.tsx",
     "webpack.config.ts",
     ".eslintrc.js"
   ] /* Include modules in the program. */,

@@ -9,6 +9,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:i18next/recommended",
     "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
   ],
   overrides: [
     {
@@ -18,6 +19,12 @@ module.exports = {
       files: [".eslintrc.{js,cjs}"],
       parserOptions: {
         sourceType: "script",
+      },
+    },
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
       },
     },
   ],

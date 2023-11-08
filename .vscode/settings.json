@@ -1,6 +1,7 @@
 {
   "cSpell.language": "en,ru",
   "cSpell.words": [
+    "autodocs",
     "dbaeumer",
     "esbenp",
     "languagedetector",
@@ -10,7 +11,8 @@
     "svgr",
     "svrg",
     "testid",
-    "unmocked"
+    "unmocked",
+    "webpack"
   ],
   "scss.validate": false,
   "css.validate": false,

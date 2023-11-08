@@ -1,6 +1,7 @@
 import type webpack from "webpack";
 
 import type {BuildOptions} from "./types/config";
+import {buildAliases} from "./helpers/buildAliases";
 
 export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
   const {paths} = options;
@@ -10,13 +11,6 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
     preferAbsolute: true,
     modules: [paths.src, "node_modules"],
     mainFiles: ["index"],
-    alias: {
-      "@app": paths.src + "/app",
-      "@pages": paths.src + "/pages",
-      "@entities": paths.src + "/entities",
-      "@features": paths.src + "/features",
-      "@shared": paths.src + "/shared",
-      "@widgets": paths.src + "/widgets",
-    },
+    alias: buildAliases(paths),
   };
 }
