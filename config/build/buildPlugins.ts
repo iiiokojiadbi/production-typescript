@@ -25,8 +25,11 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
       _IS_DEV_: JSON.stringify(isDev),
     }),
 
-    new BundleAnalyzerPlugin({openAnalyzer: false}),
-
-    ...(isDev ? [new ReactRefreshWebpackPlugin({overlay: false})] : []),
+    ...(isDev
+      ? [
+          new ReactRefreshWebpackPlugin({overlay: false}),
+          new BundleAnalyzerPlugin({openAnalyzer: false}),
+        ]
+      : []),
   ];
 }
