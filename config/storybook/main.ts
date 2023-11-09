@@ -30,24 +30,26 @@ const config: StorybookConfig = {
       src: path.resolve(__dirname, "..", "..", "src"),
     };
 
-    config.resolve!.modules?.push(paths.src);
-    config.resolve!.alias = {
-      ...config.resolve?.alias,
-      ...buildAliases(paths),
-    };
+    if (config.resolve != null) {
+      (config.resolve.modules as string[]).push(paths.src);
+      config.resolve.alias = {
+        ...config.resolve?.alias,
+        ...buildAliases(paths),
+      };
+    }
 
-    config.module!.rules = config.module!.rules!.map(rule => {
-      const typedRules = rule as RuleSetRule;
+    if (config.module != null) {
+      config.module.rules = (config.module.rules as RuleSetRule[]).map(rule => {
+        if (String(rule.test).includes("svg")) {
+          return {...rule, exclude: /\.svg$/};
+        }
 
-      if (/svg/.test(typedRules.test as string)) {
-        return {...typedRules, exclude: /\.svg$/};
-      }
+        return rule;
+      });
 
-      return rule;
-    });
-
-    config.module!.rules?.push(buildSvgLoader());
-    config.module!.rules?.push(buildCssLoader(true));
+      config.module.rules.push(buildSvgLoader());
+      config.module.rules.push(buildCssLoader(true));
+    }
 
     return config;
   },
