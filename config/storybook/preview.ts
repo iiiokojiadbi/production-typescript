@@ -1,3 +1,5 @@
+import "loki/configure-react";
+
 import StyleDecorator from "@shared/config/storybook/StyleDecorator";
 import type {Preview} from "@storybook/react";
 
