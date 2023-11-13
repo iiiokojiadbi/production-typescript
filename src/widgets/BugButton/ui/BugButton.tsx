@@ -1,4 +1,4 @@
-import {Button} from "@shared/ui/Button";
+import {Button, ButtonTheme} from "@shared/ui/Button";
 import {type FC, useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 
@@ -15,7 +15,11 @@ const BugButton: FC = () => {
     if (error) throw new Error();
   }, [error]);
 
-  return <Button onClick={onThrow}>{t("ShowError")}</Button>;
+  return (
+    <Button theme={ButtonTheme.BACKGROUND_INVERTED} onClick={onThrow}>
+      {t("ShowError")}
+    </Button>
+  );
 };
 
 export default BugButton;

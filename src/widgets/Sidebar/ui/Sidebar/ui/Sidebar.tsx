@@ -1,7 +1,5 @@
-import {LangSwitcher} from "@features/LangSwitcher";
-import {ThemeSwitcher} from "@features/ThemeSwitcher";
 import {classNames} from "@shared/lib/classNames";
-import {Button} from "@shared/ui/Button";
+import {Button, ButtonTheme} from "@shared/ui/Button";
 import type {FC} from "react";
 import {useState} from "react";
 
@@ -26,13 +24,14 @@ const Sidebar: FC<SidebarProps> = props => {
       className={classNames(cls.Sidebar, [className], {
         [cls.collapsed]: collapsed,
       })}>
-      <Button data-testid="sidebar-toggle" onClick={onToggle}>
-        TOGGLE
+      <Button
+        data-testid="sidebar-toggle"
+        onClick={onToggle}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
+        square
+        className={classNames(cls.collapseBtn)}>
+        {collapsed ? ">" : "<"}
       </Button>
-      <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher />
-      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@
   height: var(--navbar-height);
   padding: 20px;
 
-  background-color: var(--inverted-bg-color);
+  background-color: var(--inverted-primary-bg-color);
 }
 
 .links {
@@ -15,4 +15,11 @@
 
 .mainLink {
   margin-right: 15px;
+}
+
+.switchers {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  min-width: 70px;
 }
