@@ -1,4 +1,4 @@
-import {classNames} from "@shared/lib/classNames";
+import {classNames, type TAdditional, type TMods} from "@shared/lib/classNames";
 import type {ButtonHTMLAttributes, FC} from "react";
 
 import cls from "./Button.module.scss";
@@ -10,26 +10,40 @@ export enum ButtonTheme {
   BACKGROUND_INVERTED = "backgroundInverted",
 }
 
+export enum ButtonSize {
+  M = "size_m",
+  L = "size_l",
+  XL = "size_xl",
+}
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: ButtonTheme;
   square?: boolean;
+  size?: ButtonSize;
 }
 
 const Button: FC<ButtonProps> = props => {
-  const {children, className, theme, square, ...otherProps} = props;
+  const {
+    children,
+    className,
+    theme = "",
+    square,
+    size = ButtonSize.M,
+    ...otherProps
+  } = props;
+
+  const additional: TAdditional = [className, cls[size], cls[theme]];
+  const mods: TMods = {
+    [cls.square]: square,
+  };
 
   return (
     <button
       type="button"
-      className={classNames(
-        cls.Button,
-        [className, theme != null ? cls[theme] : undefined],
-        {
-          [cls.square]: square,
-        },
-      )}
-      {...otherProps}>
+      className={classNames(cls.Button, additional, mods)}
+      {...otherProps}
+    >
       {children}
     </button>
   );

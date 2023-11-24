@@ -18,9 +18,11 @@ const LangSwitcher: FC<LangSwitcherProps> = props => {
 
   return (
     <Button
-      theme={ButtonTheme.CLEAR}
+      theme={ButtonTheme.BACKGROUND_INVERTED}
       className={classNames("", [className])}
-      onClick={onToggle}>
+      square
+      onClick={onToggle}
+    >
       {t("Language")}
     </Button>
   );

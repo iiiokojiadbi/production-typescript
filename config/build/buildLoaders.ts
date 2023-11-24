@@ -4,14 +4,20 @@ import {buildCssLoader} from "./helpers/buildCssLoader";
 import {buildSvgLoader} from "./helpers/buildSvgLoader";
 import type {BuildOptions} from "./types/config";
 
-export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-  const {isDev} = options;
+export function buildLoaders(options: BuildOptions): webpack.ModuleOptions["rules"] {
+  const isDev = options.mode === "development";
 
   const fileLoader = {
     test: /\.(png|jpg|jpeg|gif|woff|woff2)$/i,
     type: "asset/resource",
     resourceQuery: /url/, // *.svg?url
   };
+
+  const babelPlugins = [];
+
+  if (isDev) {
+    babelPlugins.push("react-refresh/babel");
+  }
 
   const babelLoader = {
     test: /\.(js|jsx|ts|tsx)$/,
@@ -20,7 +26,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       {
         loader: "babel-loader",
         options: {
-          plugins: isDev ? ["react-refresh/babel"] : [],
+          plugins: babelPlugins.length > 0 ? babelPlugins : undefined,
         },
       },
     ],

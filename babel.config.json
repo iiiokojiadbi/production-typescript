@@ -7,6 +7,6 @@
         "runtime": "automatic" // the default option, "classic" does not automatic import anything.
       }
     ],
-    "@babel/preset-typescript" // transpile typescript
+    ["@babel/preset-typescript"] // transpile typescript
   ]
 }

@@ -1,10 +1,7 @@
 type TMods = Record<string, boolean | string | undefined>;
+type TAdditional = Array<string | undefined>;
 
-const classNames = (
-  cls: string,
-  additional?: Array<string | undefined>,
-  mods?: TMods,
-): string => {
+const classNames = (cls: string, additional?: TAdditional, mods?: TMods): string => {
   return [
     cls,
     ...(additional != null ? additional.filter(Boolean) : []),
@@ -14,4 +11,4 @@ const classNames = (
   ].join(" ");
 };
 
-export {classNames};
+export {classNames, type TAdditional, type TMods};

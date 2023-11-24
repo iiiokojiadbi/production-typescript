@@ -15,9 +15,11 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = props => {
 
   return (
     <Button
-      theme={ButtonTheme.CLEAR}
+      theme={ButtonTheme.BACKGROUND_INVERTED}
       className={classNames("", [className])}
-      onClick={toggleTheme}>
+      square
+      onClick={toggleTheme}
+    >
       {theme === Theme.DARK ? <MoonIcon /> : <SunIcon />}
     </Button>
   );

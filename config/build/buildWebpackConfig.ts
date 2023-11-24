@@ -7,16 +7,16 @@ import {buildResolvers} from "./buildResolvers";
 import type {BuildOptions} from "./types/config";
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-  const {mode, paths, isDev} = options;
+  const isDev = options.mode === "development";
 
   return {
-    mode,
-    entry: paths.entry,
+    mode: options.mode,
+    entry: options.paths.entry,
     cache: !isDev,
     output: {
       filename: "[name].[contenthash:8].js",
       assetModuleFilename: "assets/[contenthash:6]-[name][ext]",
-      path: paths.output,
+      path: options.paths.output,
       clean: true,
     },
     plugins: buildPlugins(options),
