@@ -1,17 +1,17 @@
-import renderWithTranslation from "@shared/lib/renderWithTranslation";
+import componentRender from "@shared/lib/componentRender";
 import {fireEvent, screen} from "@testing-library/react";
 
 import Sidebar from "./Sidebar";
 
 describe("Sidebar", () => {
   test("рендер", () => {
-    renderWithTranslation(<Sidebar />);
+    componentRender(<Sidebar />);
 
     expect(screen.getByTestId("sidebar")).toBeInTheDocument();
   });
 
   test("с переключением вида", () => {
-    renderWithTranslation(<Sidebar />);
+    componentRender(<Sidebar />);
 
     const toggleBtn = screen.getByTestId("sidebar-toggle");
 

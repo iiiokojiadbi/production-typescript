@@ -9,7 +9,6 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:i18next/recommended",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended",
   ],
   overrides: [
     {
