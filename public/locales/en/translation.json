@@ -5,5 +5,6 @@
   "NotFoundPage": "Page not found",
   "UnexpectedError": "An unexpected error has occurred",
   "RefreshPage": "Refresh page",
-  "ShowError": "Show error"
+  "ShowError": "Show error",
+  "Login": "Login"
 }

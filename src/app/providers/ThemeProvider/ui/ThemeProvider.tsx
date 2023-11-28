@@ -13,8 +13,14 @@ const metaTheme = document.querySelector('meta[name="theme-color"]');
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ?? Theme.LIGHT;
 
-const ThemeProvider: FC = ({children}) => {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+interface ThemeProviderProps {
+  initTheme?: Theme;
+}
+
+const ThemeProvider: FC<ThemeProviderProps> = props => {
+  const {children, initTheme} = props;
+
+  const [theme, setTheme] = useState<Theme>(initTheme ?? defaultTheme);
 
   const defaultProps = useMemo(
     () => ({

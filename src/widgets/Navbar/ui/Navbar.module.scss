@@ -1,5 +1,6 @@
 .Navbar {
   display: flex;
+  gap: 16px;
   align-items: center;
   justify-content: flex-end;
 
@@ -9,10 +10,6 @@
 
   background-color: var(--inverted-primary-bg-color);
 }
-
-// .links {
-//   margin-left: auto;
-// }
 
 .switchers {
   display: flex;
