@@ -1,3 +1,6 @@
 {
-  "MainPage": "Main page"
+  "MainPage": "Main page",
+  "Increment": "Increment",
+  "Decrement": "Decrement",
+  "CounterValue": "Counter value"
 }

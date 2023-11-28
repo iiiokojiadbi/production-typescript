@@ -1,3 +1,4 @@
+import {Counter} from "@entities/Counter";
 import {BugButton} from "@widgets/BugButton";
 import type {FC} from "react";
 import {useTranslation} from "react-i18next";
@@ -9,6 +10,7 @@ const MainPage: FC = () => {
     <div>
       <BugButton />
       {t("MainPage")}
+      <Counter />
     </div>
   );
 };
