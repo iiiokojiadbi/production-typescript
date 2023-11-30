@@ -1,8 +1,8 @@
 import componentRender from "@shared/lib/componentRender";
 import {screen} from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Counter from "./Counter";
-import userEvent from "@testing-library/user-event";
 
 describe("Counter", () => {
   const user = userEvent.setup();
