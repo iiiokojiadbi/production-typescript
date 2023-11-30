@@ -9,7 +9,7 @@ function createReduxStore(initialState?: StateSchema): ReturnType<typeof configu
       counter: counterReducer,
     },
     devTools: _IS_DEV_,
-    // preloadedState: initialState,
+    preloadedState: initialState,
   });
 }
 

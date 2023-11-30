@@ -3,12 +3,12 @@ import {type FC} from "react";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 
-import {getCounterValue} from "../model/selectors/getCounterValue/getCounterValue";
+import {counterValueSelect} from "../model/selectors/counterSelect";
 import {counterActions} from "../model/slice/counterSlice";
 
 const Counter: FC = () => {
   const {t} = useTranslation("main");
-  const counterValue = useSelector(getCounterValue);
+  const counterValue = useSelector(counterValueSelect);
 
   const dispatch = useDispatch();
 
@@ -22,9 +22,15 @@ const Counter: FC = () => {
 
   return (
     <div>
-      <h1>{`${t("CounterValue")} = ${counterValue}`}</h1>
-      <Button onClick={increment}>{t("Increment")}</Button>
-      <Button onClick={decrement}>{t("Decrement")}</Button>
+      <h1 data-testid="value-title">{`${t("CounterValue")} = ${String(
+        counterValue,
+      )}`}</h1>
+      <Button data-testid="increment-btn" onClick={increment}>
+        {t("Increment")}
+      </Button>
+      <Button data-testid="decrement-btn" onClick={decrement}>
+        {t("Decrement")}
+      </Button>
     </div>
   );
 };
